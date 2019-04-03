@@ -1,6 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+const CommentSchema = new Schema({
+    body: String,
+    author: { type: Schema.Types.ObjectId, ref: 'User', },
+},
+    {
+        timestamps: true,
+    }
+),
+
 const LoocationSchema = new Schema(
   {
     name: String,
