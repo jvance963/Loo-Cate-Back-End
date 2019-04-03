@@ -1,7 +1,7 @@
 const mongoose = require('../db/connection');
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema(
+const User = new Schema(
   {
     username: String,
     email: String,
@@ -10,4 +10,4 @@ const UserSchema = new Schema(
   { timestamps: true }
 );
 
-module.exports = UserSchema;
+module.exports = User;
