@@ -1,36 +1,18 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const User = require('./user');
 
-const LoocationSchema = new Schema(
-  {
-    name: String,
-    loc: { type: 'LineString', coordinates: [longitude, latitude] },
-    toilets: Number,
-    meta: {
-      up_votes: Number,
-      default: 0,
-    },
-    down_votes: Number,
+const Loocation = new Schema({
+  name: String,
+  location: String,
+  // loc: { type: 'LineString', coordinates: [longitude, latitude] },
+  bathrooms: Boolean,
+  misc: String,
+  up_vote: {
+    type: Number,
     default: 0,
   },
-  {
-    comments: [CommentSchema],
-  }
-);
+  author: [User],
+});
 
-//   {
-//     name: String,
-//     loc: { type: 'LineString', coordinates: [longitude, latitude] },
-//     meta: {
-//       up_votes: Number,
-//       default: 0,
-//     },
-//     down_votes: Number,
-//     default: 0,
-//   },
-//   {
-//     comments: [CommentSchema],
-//   }
-// );
-
-module.exports = LoocationSchema;
+module.exports = Loocation;

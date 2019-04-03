@@ -2,7 +2,8 @@ const mongoose = require('../db/connection');
 
 module.exports = {
   User: mongoose.model('User', require('./user')),
-  loocation: mongoose.model('Loocation', require('./loocation')),
+  Loocation: mongoose.model('Loocation', require('./loocation')),
   Loocator: mongoose.model('Loocator', require('./loocator')),
-  Humor: mongoose.model('Humor', require('./humor')),
+  Post: mongoose.model('Post', require('./post')),
+  Comment: mongoose.model('Comment', require('./comment')),
 };

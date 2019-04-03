@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
+mongoose.Promise = Promise;
 
 if (process.env.NODE_ENV == 'production') {
-  mongoose.connect(process.env.MLAB_URL);
+  mongoose.connect(process.env.DB_URL),
+    {
+      useNewURLParser: true,
+    };
 } else {
-  mongoose.connect('mongodb://localhost/loo-cate');
+  mongoose.connect('mongodb://localhost/loocate', {
+    useNewUrlParser: true,
+  });
 }
-
-mongoose.Promise = Promise;
 
 module.exports = mongoose;
