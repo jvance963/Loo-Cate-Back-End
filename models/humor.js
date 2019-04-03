@@ -1,30 +1,20 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-  const CommentSchema = new Schema(
-    {
-      content: String,
-      createdAt: {
-        type: Date,
-        default: Date.now(),
-      },
-      author: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
+  const CommentSchema = new Schema({
+      body: String,
+      author: {type: Schema.Types.ObjectId,ref: 'User',},
     },
-
     {
       timestamps: true,
     }
   ),
 
-var HumorSchema = new Schema({
+var StorySchema = new Schema({
   title: String,
-  author: String,
+  author: { type: Schema.Types.ObjectId, ref: 'User',},
   body: String,
-  comments: [{ body: String, date: Date }],
-  date: { type: Date, default: Date.now },
+  timestamps: true,
   hidden: Boolean,
   meta: {
     votes: Number,
@@ -33,4 +23,4 @@ var HumorSchema = new Schema({
   comments: [CommentSchema],
 });
 
-module.exports = HumorSchema
+module.exports = StorySchema
