@@ -29,4 +29,6 @@ module.exports = {
   },
 };
 
-// Need to be able to add a comment to the location. But may not need that for MVP
+// May need a comment to go to the post and need to be able to add that function
+// instead of comment I could sort through with the up_vote function and closest
+// the one with the most votes should be the one most recommended to go to.
