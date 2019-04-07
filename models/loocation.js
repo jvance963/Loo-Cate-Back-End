@@ -5,14 +5,14 @@ const User = require('./user');
 const Loocation = new Schema({
   name: String,
   location: String,
-  // loc: { type: 'LineString', coordinates: [longitude, latitude] },
-  bathrooms: Boolean,
+  lat: Number,
+  lng: Number,
   misc: String,
   up_vote: {
     type: Number,
     default: 0,
   },
-  author: [User],
+  author: User,
 });
 
 module.exports = Loocation;
