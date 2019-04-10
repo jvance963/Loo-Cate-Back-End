@@ -3,9 +3,10 @@ const router = express.Router();
 const jwt = require('jwt-simple');
 const passport = require('../config/passport');
 const config = require('../config/config');
+const mongoose = require('../models/User');
 const { User } = require('../models/index');
 
-router.post('/users/signup', (req, res) => {
+router.post('/signup', (req, res) => {
   if (req.body.email && req.body.password) {
     let newUser = {
       email: req.body.email,
@@ -35,7 +36,7 @@ router.post('/users/signup', (req, res) => {
   }
 });
 
-router.post('/users/login', (req, res) => {
+router.post('/login', (req, res) => {
   if (req.body.email && req.body.password) {
     User.findOne({ email: req.body.email }).then(user => {
       if (user) {

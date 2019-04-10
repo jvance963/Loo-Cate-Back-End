@@ -1,18 +1,18 @@
 const express = require('express');
 const parser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 const passport = require('./config/passport')();
 const userController = require('./controllers/user.js');
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 app.use(parser.json());
 app.use(passport.initialize());
 
 app.use('/user', userController);
 
-// app.use(require('./routes/index.js'));
+app.use(require('./routes/index.js'));
 
 app.set('port', process.env.PORT || 3000);
 app.listen(app.get('port'), () => {
