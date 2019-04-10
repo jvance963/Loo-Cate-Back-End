@@ -7,13 +7,13 @@ const Bathroom = new Schema({
   City: String,
   State: String,
   ZipCode: String,
-  Location: Loocation,
+  // Location: [Loocation],
   Baby: Boolean,
   Handicap: Boolean,
   Unisex: Boolean,
   Male: Boolean,
   Female: Boolean,
-  Comments: [Comment],
+  // Comments: [Comment],
 });
 
 module.exports = Bathroom;
