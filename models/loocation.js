@@ -5,8 +5,8 @@ const User = require('./user');
 const Loocation = new Schema({
   name: String,
   location: {
-    lat: Number,
-    lng: Number,
+    lat: String,
+    lng: String,
   },
   misc: String,
   up_vote: {
