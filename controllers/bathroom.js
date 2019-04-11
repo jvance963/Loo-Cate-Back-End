@@ -1,15 +1,17 @@
+const express = require('express');
+const router = express.Router();
 const { Bathroom } = require('../models/index');
 
-module.exports = {
-  index: (req, res) => {
-    bathroom.find({}).then(bathroom => {
-      res.json(bathroom);
-    });
-  },
+router.get('/', function(req, res) {
+  Bathroom.find({}).then(bathroom => {
+    res.json(bathroom);
+  });
+});
 
-  show: (req, res) => {
-    Bathroom.findOne({ _id: req.params.id }).then(bathroom => {
-      res.json(bathroom);
-    });
-  },
-};
+router.get('/:id', function(req, res) {
+  Bathroom.findOne({ _id: req.params.id }).then(bathroom => {
+    res.json(bathroom);
+  });
+});
+
+module.exports = router;
