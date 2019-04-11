@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jwt-simple');
 const passport = require('../config/passport');
 const config = require('../config/config');
-const mongoose = require('../models/User');
+const mongoose = require('../models/user');
 const { User } = require('../models/index');
 
 router.post('/signup', (req, res) => {
