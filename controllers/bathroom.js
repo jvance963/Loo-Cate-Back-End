@@ -8,7 +8,7 @@ module.exports = {
   },
 
   show: (req, res) => {
-    Bathroom.find({ _id: req.params.id }).then(bathroom => {
+    Bathroom.findOne({ _id: req.params.id }).then(bathroom => {
       res.json(bathroom);
     });
   },
