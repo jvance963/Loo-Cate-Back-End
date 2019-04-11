@@ -10,7 +10,7 @@ app.use(cors());
 app.use(parser.json());
 app.use(passport.initialize());
 
-app.use('/user', userController);
+app.use('/users', userController);
 
 // app.use(require('./routes/index.js'));
 app.get('/locations', function(req, res) {
