@@ -5,12 +5,15 @@ const Schema = mongoose.Schema;
 
 const User = new Schema(
   {
-    username: String,
     email: String,
     password: String,
   },
   { timestamps: true }
 );
+User.pre('save', function(next) {
+  this.password = bcrypt.hashSync(this.password, saltRounds);
+  next();
+});
 
 User.pre('save', function(next) {
   this.password = bcrypt.hashSync(this.password, saltRounds);
