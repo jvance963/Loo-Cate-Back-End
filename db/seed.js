@@ -1,7 +1,7 @@
 const { Bathroom } = require('../models/index');
 
 Bathroom.remove({}).then(_ => {
-  Bathroom.insertMany({
+  Bathroom.create({
     Name: 'Starbucks',
     Street: '6365 Columbia Pike',
     City: 'Falls Church',

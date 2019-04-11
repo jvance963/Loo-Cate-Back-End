@@ -3,6 +3,7 @@ const parser = require('body-parser');
 const cors = require('cors');
 const passport = require('./config/passport')();
 const userController = require('./controllers/user.js');
+const bathroomController = require('./controllers/bathroom');
 
 const app = express();
 
@@ -10,9 +11,9 @@ app.use(cors());
 app.use(parser.json());
 app.use(passport.initialize());
 
+app.use('/bathroom', bathroomController);
 app.use('/users', userController);
 
-// app.use(require('./routes/index.js'));
 app.get('/locations', function(req, res) {
   res.json({
     result: [
@@ -35,6 +36,7 @@ app.get('/locations', function(req, res) {
     ],
   });
 });
+
 app.set('port', process.env.PORT || 3001);
 app.listen(app.get('port'), () => {
   console.log('✅ port: ' + app.get('port'));
