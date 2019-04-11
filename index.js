@@ -4,6 +4,8 @@ const cors = require('cors');
 const passport = require('./config/passport')();
 const userController = require('./controllers/user.js');
 const bathroomController = require('./controllers/bathroom');
+const loocationController = require('./controllers/loocation');
+const postController = require('./controllers/post');
 
 const app = express();
 
@@ -12,6 +14,8 @@ app.use(parser.json());
 app.use(passport.initialize());
 
 app.use('/bathroom', bathroomController);
+app.use('/loocation', loocationController);
+app.use('/post', postController);
 app.use('/users', userController);
 
 app.get('/locations', function(req, res) {

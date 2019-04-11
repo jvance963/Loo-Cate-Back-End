@@ -1,3 +1,6 @@
+const express = require('express');
+const router = express.Router();
+const mongoose = require('../db/connection');
 const { Post } = require('../models/index');
 
 module.exports = {
@@ -28,5 +31,7 @@ module.exports = {
     });
   },
 };
+
+module.exports = router;
 
 // May need a comment to go to the post and need to be able to add that function
