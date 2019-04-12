@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('./', (req, res) => {
-  Comment.create(req.body).then(comment => res.redirect('/post'));
+  Comment.create(req.body).then(comment => res.redirect('/humor'));
 });
 
 router.get('/:id', (req, res) => {

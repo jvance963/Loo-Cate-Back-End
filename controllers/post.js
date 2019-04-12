@@ -19,7 +19,7 @@ router.put('/:id', (req, res) => {
   console.log(req.params.id);
   Post.findOne({
     _id: req.params.id,
-  }).then(loocation => {
+  }).then(post => {
     post.name = req.body.name;
     post.body = req.body.body;
     post.save(
