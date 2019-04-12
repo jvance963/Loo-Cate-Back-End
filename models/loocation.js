@@ -9,11 +9,6 @@ const Loocation = new Schema({
     lng: String,
   },
   misc: String,
-  up_vote: {
-    type: Number,
-    default: 0,
-  },
-  author: User,
 });
 
 module.exports = Loocation;
