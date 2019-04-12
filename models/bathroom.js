@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Comment = require('./comment');
 
 const Bathroom = new Schema({
   Name: String,
@@ -7,13 +8,16 @@ const Bathroom = new Schema({
   City: String,
   State: String,
   ZipCode: String,
-  // Location: Loocation,
+  location: {
+    lat: String,
+    lng: String,
+  },
   Baby: Boolean,
   Handicap: Boolean,
   Unisex: Boolean,
   Male: Boolean,
   Female: Boolean,
-  // Comments: [Comment],
+  comment: [Comment],
 });
 
 module.exports = Bathroom;

@@ -8,7 +8,7 @@ const post = new Schema({
   body: String,
   hidden: Boolean,
   meta: { votes: Number, default: 0 },
-  comments: [Comment],
+  comment: [Comment],
 });
 
 module.exports = post;
